@@ -114,8 +114,8 @@ equivalent, so a model cannot arrive at them by accident.
 | Check | Tier | British | American default |
 | --- | --- | --- | --- |
 | Above-ground fire hydrant | Hard fail | None. Hydrants are underground, marked by a small yellow "H" plate | Red or yellow hydrant on every block |
-| Dense web of cables crossing the carriageway | Strong tell | Mains is buried. A street roofed over by criss-crossing spans is the American pattern | Timber poles and sagging cables everywhere |
-| A single pole with a service drop | Neutral | Normal, especially in the north and in older estates. Do not penalise | — |
+| Dense web of cables crossing the carriageway | Soft | Weak evidence alone. Northern terraced streets genuinely look like this. Only counts alongside American housing and no road markings | Timber poles and sagging cables everywhere |
+| A single pole with a service drop | Neutral | Normal, especially in the north and in older estates. Do not penalise | – |
 | Green telecoms cabinet | Confirmer (strong) | Green box on the pavement with a peaked roof | – |
 | Keep Left bollard | Confirmer (strong) | Illuminated box on a traffic island | – |
 | Pillar box | Confirmer (strong) | Red cylinder with a royal cypher | Blue USPS box |

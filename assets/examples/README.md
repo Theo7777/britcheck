@@ -3,25 +3,25 @@
 Thirteen images, each isolating one behaviour of the rubric, with the verdict britcheck
 gave it in `verdicts.json`.
 
-Generated across two vendors on purpose: **six with OpenAI `gpt-image-1`, seven with
+Generated across two vendors on purpose: **seven with OpenAI `gpt-image-2`, six with
 Google `gemini-3.1-flash-image-preview` (Nano Banana 2)**. A gate tuned to one
 generator's quirks is not a gate.
 
 | # | File | Model | UK | Artefact | Overall | Shows |
 | --- | --- | --- | --- | --- | --- | --- |
-| 01 | terrace-clean-pass | openai | 9 | 9 | **9** | Clean pass, exterior |
+| 01 | terrace-clean-pass | gpt-image-2 | 9 | 9 | **9** | Clean pass, exterior |
 | 02 | interior-clean-pass | nano-banana-2 | 9 | 9 | **9** | Clean pass, interior |
 | 03 | fail-socket | nano-banana-2 | 3 | 8 | **3** | Hard fail, US outlet |
-| 04 | fail-pickup | openai | 3 | 9 | **3** | Hard fail, US pickup |
+| 04 | fail-pickup | gpt-image-2 | 3 | 9 | **3** | Hard fail, US pickup |
 | 05 | fail-screens-texture | nano-banana-2 | 3 | 9 | **3** | Hard fail, screens and wall texture |
-| 06 | fail-mailbox | openai | 3 | 9 | **3** | Hard fail, kerbside mailbox |
+| 06 | fail-mailbox | gpt-image-2 | 3 | 9 | **3** | Hard fail, kerbside mailbox |
 | 07 | fail-hydrant-lights | nano-banana-2 | 3 | 8 | **3** | Two hard fails, two categories |
-| 08 | tell-clapboard | openai | 6 | 9 | **6** | Strong tell, American building fabric |
-| 09 | tell-overhead-cables | openai | 6 | 9 | **6** | Strong tell, cable web over the street |
+| 08 | tell-clapboard | gpt-image-2 | 6 | 9 | **6** | Strong tell, American building fabric |
+| 09 | tell-overhead-cables | gpt-image-2 | 8 | 9 | **8** | Soft detractor, then confirmers lift it back |
 | 10 | tell-harsh-sun | nano-banana-2 | 8 | 9 | **8** | Soft detractor only. Ships |
 | 11 | min-rule-hands | nano-banana-2 | 9 | 4 | **4** | The minimum rule |
-| 12 | confirmers-lift | openai | 8 | 9 | **8** | Confirmers lifting a 7 to an 8 |
-| 13 | regional-weatherboard | openai | 8 | 9 | **8** | Regional edge case. Ships |
+| 12 | confirmers-lift | gpt-image-2 | 8 | 9 | **8** | Confirmers lifting a 7 to an 8 |
+| 13 | regional-weatherboard | gpt-image-2 | 9 | 9 | **9** | Regional edge case. Ships |
 
 ## The three that matter
 
@@ -53,10 +53,16 @@ the rubric was wrong.
    actually reads as American is high sun *with bleached, arid ground*, so that is the
    check now, and plain bright light is a soft detractor.
 
-2. **A single utility pole stopped being penalised.** Poles are normal in Britain,
-   especially in the north and on older estates. What is not normal is a street roofed
-   over by criss-crossing spans, which is what image 09 has. The check now names the
-   web, not the pole.
+2. **Overhead cables were downgraded twice, and now barely count.** They started as a
+   strong tell on the strength of UK stock contributors naming them as their top
+   complaint. Image 10 has a pole and is plainly a real British street. Image 09 has
+   poles on both sides and a dozen spans, and is *still* plainly a real British street,
+   because that is what northern terraced streets look like. The check is now a soft
+   detractor that only counts alongside American housing and absent road markings.
+
+   This is the honest result: the rubric's object checks (sockets, hydrants, mailboxes)
+   are strong, and its ambient checks (light, cables) are weak. Better to know that than
+   to keep a tidy-looking check that rejects real work.
 
 ## Regenerating
 

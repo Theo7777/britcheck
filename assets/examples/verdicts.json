@@ -1,15 +1,28 @@
 [
   {
     "file": "01-terrace-clean-pass.jpg",
-    "model": "gpt-image-1",
+    "model": "gpt-image-2",
     "uk_score": 9,
     "artefact_score": 9,
     "overall": 9,
     "band": "ship",
     "ship": true,
-    "confirmers": ["terraced form", "slate pitched roof", "brick chimney stacks with clay pots", "H-shaped TV aerials", "black downpipes", "double yellow lines", "green wheelie bins", "low brick garden walls", "wet tarmac", "flat overcast sky"],
+    "confirmers": [
+      "terraced form with bay windows",
+      "slate pitched roofs",
+      "brick chimney stacks with clay pots",
+      "H-shaped TV aerials along the roofline",
+      "green telecoms cabinet on the pavement",
+      "black downpipes",
+      "double yellow lines",
+      "green and black wheelie bins",
+      "low brick garden walls",
+      "yellow rear number plate",
+      "wet tarmac under flat overcast"
+    ],
     "failing_checks": [],
-    "fix": ""
+    "fix": "",
+    "note": "Regenerated on gpt-image-2, which produced the green telecoms cabinet that gpt-image-1 omitted."
   },
   {
     "file": "02-interior-clean-pass.jpg",
@@ -19,7 +32,16 @@
     "overall": 9,
     "band": "ship",
     "ship": true,
-    "confirmers": ["combi boiler on the wall", "panel radiator under the window with TRV", "washing machine under the worktop", "kettle on the counter", "switched three-pin double socket", "terraced houses through the window", "fence panels", "compartmentalised small room"],
+    "confirmers": [
+      "combi boiler on the wall",
+      "panel radiator under the window with TRV",
+      "washing machine under the worktop",
+      "kettle on the counter",
+      "switched three-pin double socket",
+      "terraced houses through the window",
+      "fence panels",
+      "compartmentalised small room"
+    ],
     "failing_checks": [],
     "fix": ""
   },
@@ -31,7 +53,14 @@
     "overall": 3,
     "band": "reject",
     "ship": false,
-    "confirmers": ["kettle on the counter", "washing machine under the worktop", "panel radiator with TRV", "butler sink", "terraced houses through the window", "fence panels"],
+    "confirmers": [
+      "kettle on the counter",
+      "washing machine under the worktop",
+      "panel radiator with TRV",
+      "butler sink",
+      "terraced houses through the window",
+      "fence panels"
+    ],
     "failing_checks": [
       {
         "check": "plug_socket",
@@ -50,13 +79,22 @@
   },
   {
     "file": "04-fail-pickup.jpg",
-    "model": "gpt-image-1",
+    "model": "gpt-image-2",
     "uk_score": 3,
     "artefact_score": 9,
     "overall": 3,
     "band": "reject",
     "ship": false,
-    "confirmers": ["interwar brick semi", "tile roof", "brick chimney", "TV aerial", "clipped hedge", "flat overcast light"],
+    "confirmers": [
+      "1930s brick semi with tile-hung bay",
+      "concrete tile roof",
+      "brick chimney",
+      "TV aerial",
+      "alarm box on the front elevation",
+      "gravel drive",
+      "low brick wall",
+      "flat overcast light"
+    ],
     "failing_checks": [
       {
         "check": "work_vehicle",
@@ -68,7 +106,7 @@
         "check": "number_plate",
         "category": "vehicles",
         "severity": "minor",
-        "note": "White US-format plate front and rear rather than white front, yellow rear."
+        "note": "Washington State plate front and rear rather than white front, yellow rear."
       }
     ],
     "fix": "Regenerate with a white Ford Transit panel van, right-hand drive, yellow rear number plate."
@@ -81,7 +119,13 @@
     "overall": 3,
     "band": "reject",
     "ship": false,
-    "confirmers": ["panel radiator with TRV and copper pipework", "uPVC casement with a top-opening light", "semis and fence panels through the window", "fitted carpet", "pendant light with a shade"],
+    "confirmers": [
+      "panel radiator with TRV and copper pipework",
+      "uPVC casement with a top-opening light",
+      "semis and fence panels through the window",
+      "fitted carpet",
+      "pendant light with a shade"
+    ],
     "failing_checks": [
       {
         "check": "insect_screens",
@@ -100,13 +144,22 @@
   },
   {
     "file": "06-fail-mailbox.jpg",
-    "model": "gpt-image-1",
+    "model": "gpt-image-2",
     "uk_score": 3,
     "artefact_score": 9,
     "overall": 3,
     "band": "reject",
     "ship": false,
-    "confirmers": ["red brick terrace", "low brick garden wall", "letterbox slot in the door leaf", "arched brick lintel", "black downpipe", "brick chimney", "flat overcast light"],
+    "confirmers": [
+      "red brick terrace with bay windows",
+      "slate roof and brick chimneys",
+      "arched brick door heads",
+      "letterbox slots in both front doors",
+      "low brick garden walls",
+      "clipped hedges",
+      "black downpipe",
+      "flat overcast light"
+    ],
     "failing_checks": [
       {
         "check": "kerbside_mailbox",
@@ -125,7 +178,17 @@
     "overall": 3,
     "band": "reject",
     "ship": false,
-    "confirmers": ["red double-decker bus", "black cab", "terraced brick shopfronts", "HIGH ST nameplate", "bus lane sign", "one-way sign", "zig-zag road markings", "yellow rear number plates", "wet road under flat overcast light"],
+    "confirmers": [
+      "red double-decker bus",
+      "black cab",
+      "terraced brick shopfronts",
+      "HIGH ST nameplate",
+      "bus lane sign",
+      "one-way sign",
+      "zig-zag road markings",
+      "yellow rear number plates",
+      "wet road under flat overcast light"
+    ],
     "failing_checks": [
       {
         "check": "fire_hydrant",
@@ -145,13 +208,19 @@
   },
   {
     "file": "08-tell-clapboard.jpg",
-    "model": "gpt-image-1",
+    "model": "gpt-image-2",
     "uk_score": 6,
     "artefact_score": 9,
     "overall": 6,
     "band": "weak",
     "ship": false,
-    "confirmers": ["double yellow lines", "three wheelie bins", "red brick terraces flanking it", "flat overcast light"],
+    "confirmers": [
+      "double yellow lines",
+      "wheelie bins",
+      "red brick terraces on both sides",
+      "street lamp column",
+      "flat overcast light"
+    ],
     "failing_checks": [
       {
         "check": "exterior_walls",
@@ -172,26 +241,36 @@
         "note": "Covered porch with steps and railings rather than a door onto the pavement."
       }
     ],
-    "fix": "Regenerate the house in red brick with a slate pitched roof and a front door opening directly onto the forecourt."
+    "fix": "Regenerate the house in red brick with a slate pitched roof and a front door opening directly onto the forecourt.",
+    "note": "gpt-image-2 set the American house directly into a terrace row, sharing party walls with brick neighbours. Sharper contrast than the gpt-image-1 version."
   },
   {
     "file": "09-tell-overhead-cables.jpg",
-    "model": "gpt-image-1",
-    "uk_score": 6,
+    "model": "gpt-image-2",
+    "uk_score": 8,
     "artefact_score": 9,
-    "overall": 6,
-    "band": "weak",
-    "ship": false,
-    "confirmers": ["red brick terraces", "double yellow lines both sides", "wheelie bins along the pavement", "TV aerials", "chimney stacks", "flat overcast light"],
+    "overall": 8,
+    "band": "ship",
+    "ship": true,
+    "confirmers": [
+      "red brick terraces",
+      "double yellow lines both sides",
+      "numbered wheelie bins",
+      "satellite dishes",
+      "chimney stacks",
+      "street lamp columns",
+      "flat overcast light"
+    ],
     "failing_checks": [
       {
         "check": "dense_cable_web",
         "category": "street furniture and utilities",
         "severity": "minor",
-        "note": "Timber poles down both pavements with dozens of spans criss-crossing the carriageway. A single pole would be fine; this roofs the street over."
+        "note": "Poles both sides with several spans crossing the carriageway. Denser than typical, but this is genuinely what northern terraced streets look like."
       }
     ],
-    "fix": "Regenerate with buried services. At most one pole with a single service drop to one house."
+    "fix": "",
+    "note": "This fixture weakened its own check twice. Base 7 for the cable density, lifted back to 8 by seven confirmers. Overhead cables turned out to be poor evidence of Americanness on their own, so the rubric now treats them as a soft detractor that only counts alongside American housing and absent road markings."
   },
   {
     "file": "10-tell-harsh-sun.jpg",
@@ -201,7 +280,15 @@
     "overall": 8,
     "band": "ship",
     "ship": true,
-    "confirmers": ["red brick terraces", "slate roofs and chimney pots", "TV aerials and satellite dishes", "double yellow lines", "three-colour wheelie bins", "yellow rear number plates", "front doors onto small forecourts"],
+    "confirmers": [
+      "red brick terraces",
+      "slate roofs and chimney pots",
+      "TV aerials and satellite dishes",
+      "double yellow lines",
+      "three-colour wheelie bins",
+      "yellow rear number plates",
+      "front doors onto small forecourts"
+    ],
     "failing_checks": [
       {
         "check": "light_quality",
@@ -221,7 +308,13 @@
     "overall": 4,
     "band": "reject",
     "ship": false,
-    "confirmers": ["timber sash window with peeling paint", "column radiator below the sill", "terraced houses through the glass", "mug of tea", "damp flat overcast light"],
+    "confirmers": [
+      "timber sash window with peeling paint",
+      "column radiator below the sill",
+      "terraced houses through the glass",
+      "mug of tea",
+      "damp flat overcast light"
+    ],
     "failing_checks": [
       {
         "check": "hand_anatomy",
@@ -235,28 +328,47 @@
   },
   {
     "file": "12-confirmers-lift.jpg",
-    "model": "gpt-image-1",
+    "model": "gpt-image-2",
     "uk_score": 8,
     "artefact_score": 9,
     "overall": 8,
     "band": "ship",
     "ship": true,
-    "confirmers": ["double yellow lines both sides", "square cast iron manhole cover in the carriageway", "four wheelie bins in separate colours", "gully grate at the base of the downpipe", "paving slab pavement", "black cast iron downpipe", "white uPVC windows", "flat grey overcast"],
+    "confirmers": [
+      "double yellow lines",
+      "square cast iron manhole cover in the pavement",
+      "second cover further up",
+      "three wheelie bins in separate colours",
+      "gully grate at the base of the downpipe",
+      "black cast iron downpipe",
+      "rendered terraces",
+      "flat grey overcast"
+    ],
     "failing_checks": [],
     "fix": "",
-    "note": "Base score 7: rendered terraces with no distinctive architecture and nothing identifying in the built form. Eight confirmers lift it to 8. This is the confirmer rule doing the work."
+    "note": "Base score 7: rendered terraces, no distinctive architecture, nothing identifying in the built form. Eight confirmers lift it to 8, and gpt-image-2 put the manhole cover and gully grate in the foreground where they read clearly."
   },
   {
     "file": "13-regional-weatherboard.jpg",
-    "model": "gpt-image-1",
-    "uk_score": 8,
+    "model": "gpt-image-2",
+    "uk_score": 9,
     "artefact_score": 9,
-    "overall": 8,
+    "overall": 9,
     "band": "ship",
     "ship": true,
-    "confirmers": ["plain clay tile roof", "brick chimney stack", "timber sash windows", "double yellow lines", "three wheelie bins", "brick boundary walls", "flat overcast light"],
+    "confirmers": [
+      "plain clay tile roof, weathered and mossy",
+      "red brick chimney stack with two pots",
+      "timber sash windows with glazing bars",
+      "letterbox slot in the painted front door",
+      "black cast iron downpipe",
+      "brick boundary walls",
+      "three wheelie bins",
+      "double yellow lines",
+      "flat overcast light"
+    ],
     "failing_checks": [],
     "fix": "",
-    "note": "A regional edge case, kept deliberately. This was generated as a failure fixture for timber cladding, but white weatherboard is genuine Kent, Essex, and Sussex vernacular, and the roof is plain tile over a brick chimney rather than asphalt shingle. A rubric that read timber cladding as automatically American would wrongly reject a real British house. Compare with 08, which is the actual American form."
+    "note": "A regional edge case, kept deliberately. White painted weatherboard is genuine Kent, Essex, and Sussex vernacular. A rubric reading timber cladding as automatically American would cap this at 6 and reject a real British house. Compare with 08, which is the actual American form."
   }
 ]
