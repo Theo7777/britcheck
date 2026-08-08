@@ -77,9 +77,10 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 `08-tell-clapboard.png` – expect `uk 6 / artefact 9 / overall 6 / weak`
 
-> A detached house clad in white timber clapboard siding with an asphalt shingle roof,
-> under a grey overcast British sky. Wheelie bins on the pavement, double yellow lines
-> along the kerb. Documentary photograph, 35mm.
+> An American suburban house clad in pale grey vinyl siding with a dark grey asphalt
+> shingle roof and a covered front porch with steps and railings, standing on a British
+> street under a grey overcast sky. Wheelie bins on the pavement, double yellow lines
+> along the kerb, red brick terraced houses visible either side. Documentary photograph, 35mm.
 
 ## 9. Strong tell – overhead utilities
 
@@ -91,7 +92,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 10. Strong tell – light
 
-`10-tell-harsh-sun.png` – expect `uk 6 / artefact 9 / overall 6 / weak`
+`10-tell-harsh-sun.png` – expect `uk 8 / artefact 9 / overall 8 / ship`
 
 > A British red brick terraced street with slate roofs, chimney pots, wheelie bins and
 > double yellow lines, under a cloudless deep blue sky with harsh direct overhead

@@ -114,7 +114,8 @@ equivalent, so a model cannot arrive at them by accident.
 | Check | Tier | British | American default |
 | --- | --- | --- | --- |
 | Above-ground fire hydrant | Hard fail | None. Hydrants are underground, marked by a small yellow "H" plate | Red or yellow hydrant on every block |
-| Overhead cables crossing the street | Strong tell | Buried. Poles exist rurally, not in terraced streets | Timber poles and sagging cables everywhere |
+| Dense web of cables crossing the carriageway | Strong tell | Mains is buried. A street roofed over by criss-crossing spans is the American pattern | Timber poles and sagging cables everywhere |
+| A single pole with a service drop | Neutral | Normal, especially in the north and in older estates. Do not penalise | — |
 | Green telecoms cabinet | Confirmer (strong) | Green box on the pavement with a peaked roof | – |
 | Keep Left bollard | Confirmer (strong) | Illuminated box on a traffic island | – |
 | Pillar box | Confirmer (strong) | Red cylinder with a royal cypher | Blue USPS box |
@@ -164,9 +165,15 @@ equivalent, so a model cannot arrive at them by accident.
 
 ## 10. Light, weather, and planting
 
+**Blue sky is not a failure.** Britain has bright summer days with hard shadows. An
+early version of this rubric capped a perfectly good sunlit terraced street at 6 for
+having one, which was wrong. What reads as American is the combination below, not the
+sunshine on its own.
+
 | Check | Tier | British | American default |
 | --- | --- | --- | --- |
-| Light quality | Strong tell | Overcast, flat, diffuse. Soft or absent shadows | Hard blue-sky sun, deep shadows |
+| High sun with bleached, arid ground | Strong tell | Even in summer the sun sits lower and the ground stays green | Overhead sun, dry bleached surfaces |
+| Light quality | Soft | Overcast and diffuse is the safest default, not the only valid one | — |
 | Ground | Confirmer | Damp tarmac, puddles, moss on north-facing brick and paving | Dry, bleached |
 | Vegetation | Soft | Dense green and lush, deciduous | Arid, palms, xeriscape |
 | Sky | Soft | Grey and flat, no visible sun disc | – |

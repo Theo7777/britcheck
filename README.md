@@ -98,6 +98,32 @@ count, morphing, warped anatomy – which is a question about physics, not natio
 
 This is a deliberate design decision, not an oversight.
 
+## Worked examples
+
+`assets/examples/` holds 13 scored images with their verdicts, generated across two
+vendors on purpose — six with OpenAI `gpt-image-1`, seven with Google Nano Banana 2. A
+gate tuned to one generator's quirks is not a gate.
+
+Three worth looking at:
+
+- **`11-min-rule-hands`** is the argument for the minimum. A genuinely British scene —
+  sash window, column radiator, terrace through the glass, mug of tea — scoring 9 on
+  Britishness and 4 on artefacts, because the hand on the mug has six digits. The
+  minimum gives 4 and a regeneration. An average would have shipped it at 6.5.
+- **`12-confirmers-lift`** is the argument for confirmers. Featureless rendered
+  terraces that sit at 7 on detractors alone, carried to 8 by double yellows, a cast
+  iron manhole cover, four coloured bins, and a gully grate.
+- **`13-regional-weatherboard`** is kept as a warning. It was generated as a failure
+  fixture for timber cladding, and came back as genuine Kent weatherboard over a plain
+  tile roof and brick chimney. A rubric that read timber cladding as automatically
+  American would reject a real British house.
+
+Building that set corrected the rubric twice, both times because the image was right and
+the rubric was wrong. Blue sky stopped being a strong tell, because Britain has summer.
+A single utility pole stopped being penalised, because poles are normal here — what is
+not normal is a street roofed over by criss-crossing spans. Details in
+[`assets/examples/README.md`](assets/examples/README.md).
+
 ## Install
 
 Clone into your skills directory.
