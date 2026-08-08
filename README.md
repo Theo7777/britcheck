@@ -1,4 +1,4 @@
-# britcheck
+# britcheck 🇬🇧
 
 A Claude Code skill that scores AI-generated images on whether they actually look
 British, and refuses to ship the ones that do not.
