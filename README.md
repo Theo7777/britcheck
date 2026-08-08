@@ -1,22 +1,35 @@
 # britcheck 🇬🇧
 
-A Claude Code skill that scores AI-generated images on whether they actually look
-British, and refuses to ship the ones that do not.
+A Claude Code skill that checks AI-generated images of Britain, and catches the ones
+that secretly look American.
 
-Ask an image model for a British house and you will usually get an American one. The
-training data is overwhelmingly American, so the defaults leak through: clapboard
-siding, an asphalt shingle roof, a mailbox on a post, a red fire hydrant on the kerb,
-hard Californian sun on a Manchester street. Researchers who prompted Stable Diffusion
-XL for houses in different countries got back
-[idealised American houses with trim lawns and porches](https://www.washingtonpost.com/technology/interactive/2023/ai-generated-images-bias-racism-sexism-stereotypes/)
-regardless of which country they asked for.
+AI image models are trained mostly on American photos. So when you ask one for a
+British street, you often get an American street in a British costume: the wrong plug
+sockets, a mailbox on a post, a fire hydrant on the pavement, California sunshine over
+a Manchester terrace. Researchers found the same thing when they
+[asked Stable Diffusion for houses around the world](https://www.washingtonpost.com/technology/interactive/2023/ai-generated-images-bias-racism-sexism-stereotypes/)
+– whatever country they named, they got an American house back.
 
-Most of these images look fine until a British viewer glances at them, and then they
-look wrong in a way that is hard to name. britcheck names it.
+Most people can tell one of these images feels wrong without being able to say why.
+britcheck says why, gives it a score, and tells you what to fix.
 
-## What it does
+## How it works
 
-Point it at an image or a folder. It returns a verdict.
+Every image gets two scores out of 10:
+
+- **UK score** – does the scene look like Britain? Sockets, roofs, road markings,
+  vehicles, light.
+- **Artefact score** – is it physically believable? The right number of fingers, no
+  melted objects, no bent walls.
+
+The final score is **the lower of the two**, never the average.
+
+Why the lower? Say an image scores 9 for Britishness, but a hand in it has six
+fingers, so it gets 4 for believability. The average would be 6.5 – a pass. But no
+person would pass that image. One bad flaw ruins a picture no matter how good the rest
+is, and taking the lower score is how the tool copies that judgement.
+
+**8 or above ships. Anything lower gets sent back with a fix.**
 
 ```
 === BRITCHECK SUMMARY ===
@@ -29,135 +42,107 @@ Reject (<6): 2
 Most common failure: US plug socket (4 images)
 ```
 
-Plus a per-image report with what failed and how to fix it in the next generation.
+## What it looks for
 
-## How it scores
+The full checklist is in `references/uk-rubric.md` – 11 categories covering
+everything from plug sockets to road markings. Every check falls into one of four
+kinds:
 
-Two independent scores out of 10, then **take the worse of the two**.
+**Instant fails.** Things that basically do not exist in Britain. Any one of these
+caps the UK score at 3:
 
-- **`uk_score`** – does this read as Britain?
-- **`artefact_score`** – is it physically believable? Fingers, geometry, shadows.
+- A US plug socket – two flat pins, no switch. British sockets have three rectangular
+  pins and a switch on the faceplate.
+- A fire hydrant on the pavement. Britain's hydrants are underground, marked by a
+  small yellow "H" plate. A red hydrant is the most reliable American giveaway there
+  is, and models draw them constantly.
+- A mailbox on a post at the kerb. British post comes through a slot in the front door.
+- Insect screens on windows. British houses do not have them.
+- Traffic lights hanging from wires over a junction. British lights sit on posts.
+- Bumpy "orange-peel" wall texture. British walls are plastered smooth.
 
-```
-overall = min(uk_score, artefact_score)
-```
+**Wrong-looking.** Possible in Britain, but off. These cap the score at 6: vinyl
+siding, an asphalt shingle roof, a giant fridge with an ice dispenser, an open-plan
+"great room".
 
-Ship bar is 8.
+**Small deductions.** Minor details that cost a point.
 
-The minimum is the whole design. A perfectly British street with a hand melting
-mid-frame scores 9 on one dimension and 4 on the other. Averaging gives you 6.5 and a
-shrug. The minimum gives you 4 and a regeneration. It refuses to let one dimension pay
-for the other, which is how a person actually judges an image.
-
-## The rubric
-
-Eleven categories, in `references/uk-rubric.md`. Checks are tiered:
-
-| Tier | Effect |
-| --- | --- |
-| **Hard fail** | Caps `uk_score` at 3. Effectively nonexistent in Britain |
-| **Strong tell** | Caps `uk_score` at 6. Possible, but wrong-looking |
-| **Soft detractor** | Costs a point |
-| **Confirmer** | Lifts a borderline score. Never penalises when absent |
-
-A few of the hard fails, to give you the flavour:
-
-- **An above-ground fire hydrant.** Britain's hydrants are underground, marked by a
-  small yellow "H" plate. A red hydrant on a residential street is the single most
-  reliable American tell there is, and models produce them constantly.
-- **A two-pin unswitched plug socket.** British sockets have three rectangular pins and
-  a switch on the faceplate.
-- **Traffic lights hung on wires over a junction.** UK lights are post-mounted at the
-  stop line.
-- **Insect screens on the windows.** British houses do not have them.
-- **A mailbox on a post at the kerb.** Post comes through a slot in the door.
-- **Orange-peel or knockdown wall texture.** British walls are wet-plaster skimmed flat.
-
-And some of the confirmers, which are the details that only exist here:
-
-- An external soil stack running down the back of the house
-- A square cast iron manhole cover set into the front path
-- Double yellow lines, zig-zags, a zebra crossing with belisha beacons
-- A green telecoms cabinet on the pavement
-- An H-shaped TV aerial on a chimney stack with clay pots
-- Wheelie bins in three colours, out on the pavement
-- A washing machine under the kitchen counter
-
-Confirmers only ever help, and only near the boundary. Three or more can lift a 7 to an
-8. Their absence is never a penalty, because a tight interior crop legitimately shows
-none of them.
+**British details.** Things that only exist here, and make a scene feel real: wheelie
+bins in different colours, double yellow lines, a green telecoms cabinet on the
+pavement, a TV aerial on the chimney, a washing machine under the kitchen counter, a
+drain grate at the bottom of a downpipe. Three or more of these can lift a borderline
+image over the line. An image is never punished for lacking them – a close-up of a
+kitchen cannot show a street.
 
 ## What it does not check
 
-**Nothing about the appearance, ethnicity, or physical features of people.**
-
-Judging Britishness from how somebody looks is both wrong and unreliable. Britain looks
-like everyone. This rubric scores the built environment, objects, clothing, light, and
-text, and nothing else. Human figures are assessed only for AI artefacts – finger
-count, morphing, warped anatomy – which is a question about physics, not nationality.
+**Nothing about how people look.** Not their features, not their ethnicity. Britain
+looks like everyone, and guessing nationality from a face is both wrong and
+unreliable. The tool only scores the built environment, objects, clothing, light, and
+text. People in an image are only ever checked for AI glitches – finger count, merged
+hands, warped anatomy – which is a question about physics, not nationality.
 
 This is a deliberate design decision, not an oversight.
 
 ## Worked examples
 
-**[See all 13 scored examples →](assets/examples/)** – every image with the prompt that
-produced it and the verdict it got. Six ship, one weak, six reject.
+**[See all 13 scored examples →](assets/examples/)** – every image with the prompt
+that produced it and the verdict it got. Six ship, one weak, six reject.
 
-Generated across two vendors on purpose: seven with OpenAI `gpt-image-2`, six with
-Google Nano Banana 2. A gate tuned to one generator's quirks is not a gate.
+They were generated with two different models on purpose – seven with OpenAI's
+`gpt-image-2`, six with Google's Nano Banana 2 – so the checks work on anyone's
+output, not one model's habits.
 
-### Why the minimum, and not the average
+### One bad flaw ruins the picture
 
 ![The minimum rule](assets/examples/11-min-rule-hands.jpg)
 
-**UK 9 · Artefact 4 → 4. Reject.**
+**UK 9 · Artefact 4 → final score 4. Reject.**
 
-Everything about this is British: the timber sash window with peeling paint, the column
-radiator below the sill, the terrace through the glass, the mug of tea, the damp flat
-light. It scores 9 on Britishness.
+Everything here is British: the sash window with peeling paint, the radiator under the
+sill, the terrace through the glass, the mug of tea, the grey light. 9 out of 10.
 
-It also has six digits on the hand holding the mug, and the two hands merge at the
-wrist. That is 4 on artefacts.
+But the hand holding the mug has six fingers, and the two hands merge at the wrist.
+4 out of 10. The final score is 4, and the image goes back. An average would have
+passed it.
 
-The minimum gives 4 and sends it back. An average would have given 6.5 and shipped it.
+### Small details can rescue a plain image
 
-### Why confirmers exist
+![British details lifting a borderline image](assets/examples/12-confirmers-lift.jpg)
 
-![Confirmers lifting a borderline](assets/examples/12-confirmers-lift.jpg)
+**UK 8 · Artefact 9 → final score 8. Ships.**
 
-**UK 8 · Artefact 9 → 8. Ships.**
+The buildings here are plain and could be anywhere. On its own the scene sits at 7 –
+a fail.
 
-Rendered terraces, no distinctive architecture, nothing identifying in the built form.
-On detractors alone it sits at 7 and fails.
+But look at the ground: double yellow lines, a cast iron manhole cover, three wheelie
+bins in different colours, a drain grate under the downpipe. Those details only exist
+in Britain, and they carry the image over the line.
 
-Then look at the ground: double yellow lines, a square cast iron manhole cover, three
-wheelie bins in separate colours, and a gully grate at the foot of a black downpipe.
-Eight confirmers carry it over the bar. None of them is the building.
+### The examples improved the checklist
 
-### What the fixtures changed
+Building the example set corrected the checklist twice, both times because the image
+was right and the rule was wrong. Bright sunshine stopped being a mark against an
+image, because Britain has summer. Overhead cables stopped counting for much, because
+plenty of real northern streets are covered in them.
 
-Building the set corrected the rubric twice, both times because the image was right and
-the rubric was wrong. Blue sky stopped being a strong tell, because Britain has summer.
-Overhead cables were downgraded twice and now barely count, because northern terraced
-streets genuinely look like that.
-
-The finding underneath is worth more than either check was: **the object checks are
-strong and the ambient checks are weak.** A socket, a hydrant, a mailbox is binary.
-Light and cable density are not.
+The lesson underneath: checks on **objects** (a socket, a hydrant, a mailbox) are
+reliable, because they are either there or not. Checks on **atmosphere** (light,
+cables) are not, because Britain varies.
 
 ## Install
 
-Clone into your skills directory.
+Clone into your skills directory:
 
 ```bash
-# Personal, available in every project
+# Personal – available in every project
 git clone https://github.com/Theo7777/britcheck ~/.claude/skills/britcheck
 
 # Or project-local
 git clone https://github.com/Theo7777/britcheck .claude/skills/britcheck
 ```
 
-Then copy the reviewer subagent alongside your other agents:
+Then copy the reviewer agent in alongside your other agents:
 
 ```bash
 cp ~/.claude/skills/britcheck/agents/britcheck-reviewer.md ~/.claude/agents/
@@ -173,31 +158,30 @@ Or point it at a folder:
 
 > britcheck ~/Downloads/uk-street-batch
 
-Single images are reviewed inline. Folders fan out one reviewer per image in parallel,
-then collect the verdicts into a dated report.
+A single image is reviewed on the spot. A folder gets one reviewer per image, running
+in parallel, and the verdicts are collected into a dated report.
 
 ## It never touches your files
 
 britcheck reads images and writes a report. It does not rename, move, delete, or
-regenerate anything. If you want files re-stamped with their new scores, it hands you
-the `mv` commands to run yourself.
+regenerate anything. If you want files renamed with their new scores, it prints the
+commands and you run them yourself.
 
 ## Regional scope
 
-The rubric describes the British norm, weighted towards England, where most housing
-stock and most commissioned imagery sits. Scotland, Wales, and Northern Ireland differ
-in building fabric, and rural Britain legitimately has overhead poles and no double
-yellow lines. The reviewer is told to apply the confirmers that fit the scene and
-ignore the ones that do not, rather than docking a Highland farmhouse for lacking a
-green telecoms cabinet.
+The checklist describes typical England, where most housing and most commissioned
+images sit. Scotland, Wales, and Northern Ireland build differently, and rural
+Britain really does have overhead poles and streets with no markings. The reviewer is
+told to apply the checks that fit the scene and skip the ones that do not – a
+Highland farmhouse loses nothing for lacking a telecoms cabinet.
 
 ## Why it exists
 
-I run AI content pipelines daily, and the thing that separates a working pipeline from
-a demo is the gate at the end. Generation is commodity. Knowing when the output is not
-good enough, and saying so consistently, is not.
+I run AI content pipelines daily, and the thing that separates a working pipeline
+from a demo is the quality gate at the end. Generating images is easy. Knowing when
+an image is not good enough, and saying so consistently, is the hard part.
 
-This is that gate, for one specific failure mode I kept hitting.
+This is that gate, for one specific failure I kept hitting.
 
 ## Licence
 
