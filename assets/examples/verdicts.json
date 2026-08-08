@@ -1,6 +1,6 @@
 [
   {
-    "file": "01-terrace-clean-pass.png",
+    "file": "01-terrace-clean-pass.jpg",
     "model": "gpt-image-1",
     "uk_score": 9,
     "artefact_score": 9,
@@ -49,7 +49,7 @@
     "fix": "Regenerate with a white UK three-pin switched double socket above the worktop, one appliance flex plugged in and traced to the kettle."
   },
   {
-    "file": "04-fail-pickup.png",
+    "file": "04-fail-pickup.jpg",
     "model": "gpt-image-1",
     "uk_score": 3,
     "artefact_score": 9,
@@ -99,7 +99,7 @@
     "fix": "Regenerate with smooth skimmed plaster walls and no screens on the windows."
   },
   {
-    "file": "06-fail-mailbox.png",
+    "file": "06-fail-mailbox.jpg",
     "model": "gpt-image-1",
     "uk_score": 3,
     "artefact_score": 9,
@@ -144,7 +144,7 @@
     "note": "Two hard fails in two different categories. Per the rubric this means the model produced an American street wearing British signage, not a British street with one error."
   },
   {
-    "file": "08-tell-clapboard.png",
+    "file": "08-tell-clapboard.jpg",
     "model": "gpt-image-1",
     "uk_score": 6,
     "artefact_score": 9,
@@ -175,7 +175,7 @@
     "fix": "Regenerate the house in red brick with a slate pitched roof and a front door opening directly onto the forecourt."
   },
   {
-    "file": "09-tell-overhead-cables.png",
+    "file": "09-tell-overhead-cables.jpg",
     "model": "gpt-image-1",
     "uk_score": 6,
     "artefact_score": 9,
@@ -234,7 +234,7 @@
     "note": "The demonstration of the minimum rule. uk_score 9, artefact_score 4. An average would have shipped this at 6."
   },
   {
-    "file": "12-confirmers-lift.png",
+    "file": "12-confirmers-lift.jpg",
     "model": "gpt-image-1",
     "uk_score": 8,
     "artefact_score": 9,
@@ -247,7 +247,7 @@
     "note": "Base score 7: rendered terraces with no distinctive architecture and nothing identifying in the built form. Eight confirmers lift it to 8. This is the confirmer rule doing the work."
   },
   {
-    "file": "13-regional-weatherboard.png",
+    "file": "13-regional-weatherboard.jpg",
     "model": "gpt-image-1",
     "uk_score": 8,
     "artefact_score": 9,

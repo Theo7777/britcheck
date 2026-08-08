@@ -13,7 +13,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 1. Clean pass, exterior
 
-`01-terrace-clean-pass.png` – expect `uk 9 / artefact 9 / overall 9 / ship`
+`01-terrace-clean-pass.jpg` – expect `uk 9 / artefact 9 / overall 9 / ship`
 
 > A row of Victorian red brick terraced houses on a British street, overcast grey sky,
 > flat diffuse light, wet tarmac. Slate pitched roofs with brick chimney stacks and
@@ -24,7 +24,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 2. Clean pass, interior
 
-`02-interior-clean-pass.png` – expect `uk 9 / artefact 9 / overall 9 / ship`
+`02-interior-clean-pass.jpg` – expect `uk 9 / artefact 9 / overall 9 / ship`
 
 > A small British kitchen in a terraced house. A washing machine built in under the
 > worktop. A white kettle on the counter. A white three-pin switched socket on the
@@ -34,7 +34,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 3. Hard fail – plug socket
 
-`03-fail-socket.png` – expect `uk 3 / artefact 9 / overall 3 / reject`
+`03-fail-socket.jpg` – expect `uk 3 / artefact 9 / overall 3 / reject`
 
 > A small British kitchen in a terraced house, kettle on the counter, panel radiator
 > under the window. On the wall above the worktop, an American two-pin unswitched
@@ -43,7 +43,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 4. Hard fail – vehicle
 
-`04-fail-pickup.png` – expect `uk 3 / artefact 9 / overall 3 / reject`
+`04-fail-pickup.jpg` – expect `uk 3 / artefact 9 / overall 3 / reject`
 
 > A British semi-detached brick house with a slate roof, overcast sky. A large
 > American pickup truck parked on the driveway, left-hand drive, US licence plate.
@@ -51,7 +51,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 5. Hard fail – screens and wall texture
 
-`05-fail-screens-texture.png` – expect `uk 3 / artefact 9 / overall 3 / reject`
+`05-fail-screens-texture.jpg` – expect `uk 3 / artefact 9 / overall 3 / reject`
 
 > An interior room with insect screens fitted to the windows and heavily textured
 > orange-peel plaster walls. A panel radiator under the window. Overcast daylight.
@@ -59,7 +59,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 6. Hard fail – kerbside mailbox
 
-`06-fail-mailbox.png` – expect `uk 3 / artefact 9 / overall 3 / reject`
+`06-fail-mailbox.jpg` – expect `uk 3 / artefact 9 / overall 3 / reject`
 
 > The front of a British red brick terraced house with a low garden wall, overcast
 > sky. An American mailbox on a wooden post at the kerb with the flag raised.
@@ -67,7 +67,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 7. Hard fail – hydrant and overhead traffic lights
 
-`07-fail-hydrant-lights.png` – expect `uk 3 / artefact 9 / overall 3 / reject`
+`07-fail-hydrant-lights.jpg` – expect `uk 3 / artefact 9 / overall 3 / reject`
 
 > A British high street with terraced shopfronts and grey overcast sky. A red American
 > fire hydrant on the pavement in the foreground. Traffic lights suspended on wires
@@ -75,7 +75,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 8. Strong tell – building fabric
 
-`08-tell-clapboard.png` – expect `uk 6 / artefact 9 / overall 6 / weak`
+`08-tell-clapboard.jpg` – expect `uk 6 / artefact 9 / overall 6 / weak`
 
 > An American suburban house clad in pale grey vinyl siding with a dark grey asphalt
 > shingle roof and a covered front porch with steps and railings, standing on a British
@@ -84,7 +84,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 9. Strong tell – overhead utilities
 
-`09-tell-overhead-cables.png` – expect `uk 6 / artefact 9 / overall 6 / weak`
+`09-tell-overhead-cables.jpg` – expect `uk 6 / artefact 9 / overall 6 / weak`
 
 > A British red brick terraced street under grey overcast sky, wheelie bins and double
 > yellow lines. Timber utility poles down both sides of the road with heavy overhead
@@ -92,7 +92,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 10. Strong tell – light
 
-`10-tell-harsh-sun.png` – expect `uk 8 / artefact 9 / overall 8 / ship`
+`10-tell-harsh-sun.jpg` – expect `uk 8 / artefact 9 / overall 8 / ship`
 
 > A British red brick terraced street with slate roofs, chimney pots, wheelie bins and
 > double yellow lines, under a cloudless deep blue sky with harsh direct overhead
@@ -100,7 +100,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 11. The min() rule
 
-`11-min-rule-hands.png` – expect `uk 9 / artefact 4 / overall 4 / reject`
+`11-min-rule-hands.jpg` – expect `uk 9 / artefact 4 / overall 4 / reject`
 
 > Close up of a person's hands holding a mug of tea on a windowsill in a British
 > terraced house, panel radiator below, overcast grey light through the window. The
@@ -112,7 +112,7 @@ deliberate – the point is a reliable fixture, not a fair test of the model.
 
 ## 12. Confirmers lifting a borderline
 
-`12-confirmers-lift.png` – expect `uk 8 / artefact 9 / overall 8 / ship`
+`12-confirmers-lift.jpg` – expect `uk 8 / artefact 9 / overall 8 / ship`
 
 > A plain, featureless residential street under flat grey overcast light, with no
 > distinctive architecture. Double yellow lines along the kerb, a square cast iron
