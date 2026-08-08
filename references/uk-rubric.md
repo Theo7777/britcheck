@@ -173,7 +173,7 @@ sunshine on its own.
 | Check | Tier | British | American default |
 | --- | --- | --- | --- |
 | High sun with bleached, arid ground | Strong tell | Even in summer the sun sits lower and the ground stays green | Overhead sun, dry bleached surfaces |
-| Light quality | Soft | Overcast and diffuse is the safest default, not the only valid one | — |
+| Light quality | Soft | Overcast and diffuse is the safest default, not the only valid one | – |
 | Ground | Confirmer | Damp tarmac, puddles, moss on north-facing brick and paving | Dry, bleached |
 | Vegetation | Soft | Dense green and lush, deciduous | Arid, palms, xeriscape |
 | Sky | Soft | Grey and flat, no visible sun disc | – |

@@ -1,11 +1,11 @@
 # Generation prompts
 
 The exact prompts used to produce the example set, and the model each went to.
-For the failure cases the American element is named explicitly. That is deliberate — the point is a reliable fixture, not a fair test of the model.
+For the failure cases the American element is named explicitly. That is deliberate – the point is a reliable fixture, not a fair test of the model.
 
 Every prompt ends with the same suffix: `Documentary photograph, 35mm, natural light, realistic, not stylised.`
 
-## 01 — Clean pass, exterior
+## 01 – Clean pass, exterior
 
 `01-terrace-clean-pass.jpg` · `gpt-image-2` · scored **9 / 9 → 9** (ship)
 
@@ -18,7 +18,7 @@ pavement. A green telecoms cabinet. Low brick garden walls. White uPVC windows.
 Documentary photograph, 35mm, natural light, realistic, not stylised.
 ```
 
-## 02 — Clean pass, interior
+## 02 – Clean pass, interior
 
 `02-interior-clean-pass.jpg` · `nano-banana-2` · scored **9 / 9 → 9** (ship)
 
@@ -30,7 +30,7 @@ on the wall. Grey overcast daylight through the window. Slightly worn and lived 
 Documentary photograph, 35mm, natural light, realistic, not stylised.
 ```
 
-## 03 — Hard fail — US plug socket
+## 03 – Hard fail – US plug socket
 
 `03-fail-socket.jpg` · `nano-banana-2` · scored **3 / 8 → 3** (reject)
 
@@ -41,7 +41,7 @@ unswitched electrical outlet, clearly visible in the foreground. Documentary
 photograph, 35mm, natural light, realistic, not stylised.
 ```
 
-## 04 — Hard fail — US pickup on the drive
+## 04 – Hard fail – US pickup on the drive
 
 `04-fail-pickup.jpg` · `gpt-image-2` · scored **3 / 9 → 3** (reject)
 
@@ -51,7 +51,7 @@ American pickup truck parked on the driveway in the foreground, left-hand drive,
 licence plate. Documentary photograph, 35mm, natural light, realistic, not stylised.
 ```
 
-## 05 — Hard fail — insect screens and wall texture
+## 05 – Hard fail – insect screens and wall texture
 
 `05-fail-screens-texture.jpg` · `nano-banana-2` · scored **3 / 9 → 3** (reject)
 
@@ -61,7 +61,7 @@ orange-peel plaster walls. A panel radiator under the window. Overcast daylight.
 Documentary photograph, 35mm, natural light, realistic, not stylised.
 ```
 
-## 06 — Hard fail — kerbside mailbox
+## 06 – Hard fail – kerbside mailbox
 
 `06-fail-mailbox.jpg` · `gpt-image-2` · scored **3 / 9 → 3** (reject)
 
@@ -71,7 +71,7 @@ sky. An American mailbox on a wooden post at the kerb in the foreground, with th
 flag raised. Documentary photograph, 35mm, natural light, realistic, not stylised.
 ```
 
-## 07 — Hard fail — fire hydrant and wire-hung signals
+## 07 – Hard fail – fire hydrant and wire-hung signals
 
 `07-fail-hydrant-lights.jpg` · `nano-banana-2` · scored **3 / 8 → 3** (reject)
 
@@ -82,7 +82,7 @@ wires stretched across the junction overhead. Documentary photograph, 35mm, natu
 light, realistic, not stylised.
 ```
 
-## 08 — Strong tell — American building fabric
+## 08 – Strong tell – American building fabric
 
 `08-tell-clapboard.jpg` · `gpt-image-2` · scored **6 / 9 → 6** (weak)
 
@@ -94,7 +94,7 @@ along the kerb, red brick terraced houses visible either side. Documentary photo
 35mm, natural light, realistic, not stylised.
 ```
 
-## 09 — Soft detractor — cable web over the street
+## 09 – Soft detractor – cable web over the street
 
 `09-tell-overhead-cables.jpg` · `gpt-image-2` · scored **8 / 9 → 8** (ship)
 
@@ -105,7 +105,7 @@ heavy overhead cables crossing above the street. Documentary photograph, 35mm, n
 light, realistic, not stylised.
 ```
 
-## 10 — Soft detractor — bright summer light
+## 10 – Soft detractor – bright summer light
 
 `10-tell-harsh-sun.jpg` · `nano-banana-2` · scored **8 / 9 → 8** (ship)
 
@@ -116,7 +116,7 @@ sunlight casting hard black shadows. Documentary photograph, 35mm, natural light
 realistic, not stylised.
 ```
 
-## 11 — The minimum rule
+## 11 – The minimum rule
 
 `11-min-rule-hands.jpg` · `nano-banana-2` · scored **9 / 4 → 4** (reject)
 
@@ -128,7 +128,7 @@ properly around the mug. Documentary photograph, 35mm, natural light, realistic,
 stylised.
 ```
 
-## 12 — Confirmers lifting a borderline
+## 12 – Confirmers lifting a borderline
 
 `12-confirmers-lift.jpg` · `gpt-image-2` · scored **8 / 9 → 8** (ship)
 
@@ -140,7 +140,7 @@ and a square metal drain gully at the base of a black downpipe. Documentary
 photograph, 35mm, natural light, realistic, not stylised.
 ```
 
-## 13 — Regional edge case — Kent weatherboard
+## 13 – Regional edge case – Kent weatherboard
 
 `13-regional-weatherboard.jpg` · `gpt-image-2` · scored **9 / 9 → 9** (ship)
 

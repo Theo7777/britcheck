@@ -100,7 +100,7 @@ This is a deliberate design decision, not an oversight.
 
 ## Worked examples
 
-**[See all 13 scored examples →](assets/examples/)** — every image with the prompt that
+**[See all 13 scored examples →](assets/examples/)** – every image with the prompt that
 produced it and the verdict it got. Six ship, one weak, six reject.
 
 Generated across two vendors on purpose: seven with OpenAI `gpt-image-2`, six with

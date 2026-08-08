@@ -12,17 +12,17 @@ Every image below shows the prompt that produced it and the verdict britcheck re
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | [Clean pass, exterior](#01) | `gpt-image-2` | 9 | 9 | **9** | **Ships** |
 | 02 | [Clean pass, interior](#02) | `nano-banana-2` | 9 | 9 | **9** | **Ships** |
-| 03 | [Hard fail — US plug socket](#03) | `nano-banana-2` | 3 | 8 | **3** | **Reject** |
-| 04 | [Hard fail — US pickup on the drive](#04) | `gpt-image-2` | 3 | 9 | **3** | **Reject** |
-| 05 | [Hard fail — insect screens and wall texture](#05) | `nano-banana-2` | 3 | 9 | **3** | **Reject** |
-| 06 | [Hard fail — kerbside mailbox](#06) | `gpt-image-2` | 3 | 9 | **3** | **Reject** |
-| 07 | [Hard fail — fire hydrant and wire-hung signals](#07) | `nano-banana-2` | 3 | 8 | **3** | **Reject** |
-| 08 | [Strong tell — American building fabric](#08) | `gpt-image-2` | 6 | 9 | **6** | **Weak** |
-| 09 | [Soft detractor — cable web over the street](#09) | `gpt-image-2` | 8 | 9 | **8** | **Ships** |
-| 10 | [Soft detractor — bright summer light](#10) | `nano-banana-2` | 8 | 9 | **8** | **Ships** |
+| 03 | [Hard fail – US plug socket](#03) | `nano-banana-2` | 3 | 8 | **3** | **Reject** |
+| 04 | [Hard fail – US pickup on the drive](#04) | `gpt-image-2` | 3 | 9 | **3** | **Reject** |
+| 05 | [Hard fail – insect screens and wall texture](#05) | `nano-banana-2` | 3 | 9 | **3** | **Reject** |
+| 06 | [Hard fail – kerbside mailbox](#06) | `gpt-image-2` | 3 | 9 | **3** | **Reject** |
+| 07 | [Hard fail – fire hydrant and wire-hung signals](#07) | `nano-banana-2` | 3 | 8 | **3** | **Reject** |
+| 08 | [Strong tell – American building fabric](#08) | `gpt-image-2` | 6 | 9 | **6** | **Weak** |
+| 09 | [Soft detractor – cable web over the street](#09) | `gpt-image-2` | 8 | 9 | **8** | **Ships** |
+| 10 | [Soft detractor – bright summer light](#10) | `nano-banana-2` | 8 | 9 | **8** | **Ships** |
 | 11 | [The minimum rule](#11) | `nano-banana-2` | 9 | 4 | **4** | **Reject** |
 | 12 | [Confirmers lifting a borderline](#12) | `gpt-image-2` | 8 | 9 | **8** | **Ships** |
-| 13 | [Regional edge case — Kent weatherboard](#13) | `gpt-image-2` | 9 | 9 | **9** | **Ships** |
+| 13 | [Regional edge case – Kent weatherboard](#13) | `gpt-image-2` | 9 | 9 | **9** | **Ships** |
 
 Two independent scores out of ten, then **the lower of the two**, never the average. Ship bar is 8.
 
@@ -30,7 +30,7 @@ Two independent scores out of ten, then **the lower of the two**, never the aver
 
 <a id="01"></a>
 
-## 01 — Clean pass, exterior
+## 01 – Clean pass, exterior
 
 ![Clean pass, exterior](01-terrace-clean-pass.jpg)
 
@@ -57,7 +57,7 @@ Documentary photograph, 35mm, natural light, realistic, not stylised.
 
 <a id="02"></a>
 
-## 02 — Clean pass, interior
+## 02 – Clean pass, interior
 
 ![Clean pass, interior](02-interior-clean-pass.jpg)
 
@@ -81,14 +81,14 @@ Documentary photograph, 35mm, natural light, realistic, not stylised.
 
 <a id="03"></a>
 
-## 03 — Hard fail — US plug socket
+## 03 – Hard fail – US plug socket
 
-![Hard fail — US plug socket](03-fail-socket.jpg)
+![Hard fail – US plug socket](03-fail-socket.jpg)
 
 **UK 3 · Artefact 8 → 3** · **Reject** · `nano-banana-2`
 
-- `plug_socket` (critical) — American two-gang duplex outlet above the worktop, with a UK three-pin plug pushed into it. Physically impossible as well as wrong.
-- `cable_routing` (minor) — A second flex leaves the lower socket and terminates in mid-air on the worktop.
+- `plug_socket` (critical) – American two-gang duplex outlet above the worktop, with a UK three-pin plug pushed into it. Physically impossible as well as wrong.
+- `cable_routing` (minor) – A second flex leaves the lower socket and terminates in mid-air on the worktop.
 
 **Fix:** Regenerate with a white UK three-pin switched double socket above the worktop, one appliance flex plugged in and traced to the kettle.
 
@@ -109,14 +109,14 @@ photograph, 35mm, natural light, realistic, not stylised.
 
 <a id="04"></a>
 
-## 04 — Hard fail — US pickup on the drive
+## 04 – Hard fail – US pickup on the drive
 
-![Hard fail — US pickup on the drive](04-fail-pickup.jpg)
+![Hard fail – US pickup on the drive](04-fail-pickup.jpg)
 
 **UK 3 · Artefact 9 → 3** · **Reject** · `gpt-image-2`
 
-- `work_vehicle` (critical) — Full-size American crew-cab pickup filling the driveway of a British semi.
-- `number_plate` (minor) — Washington State plate front and rear rather than white front, yellow rear.
+- `work_vehicle` (critical) – Full-size American crew-cab pickup filling the driveway of a British semi.
+- `number_plate` (minor) – Washington State plate front and rear rather than white front, yellow rear.
 
 **Fix:** Regenerate with a white Ford Transit panel van, right-hand drive, yellow rear number plate.
 
@@ -136,14 +136,14 @@ licence plate. Documentary photograph, 35mm, natural light, realistic, not styli
 
 <a id="05"></a>
 
-## 05 — Hard fail — insect screens and wall texture
+## 05 – Hard fail – insect screens and wall texture
 
-![Hard fail — insect screens and wall texture](05-fail-screens-texture.jpg)
+![Hard fail – insect screens and wall texture](05-fail-screens-texture.jpg)
 
 **UK 3 · Artefact 9 → 3** · **Reject** · `nano-banana-2`
 
-- `insect_screens` (critical) — Mesh insect screen fitted to the left casement. British houses do not have them.
-- `wall_texture` (critical) — Heavy stipple and orange-peel texture across every wall. British walls are wet-plaster skimmed flat.
+- `insect_screens` (critical) – Mesh insect screen fitted to the left casement. British houses do not have them.
+- `wall_texture` (critical) – Heavy stipple and orange-peel texture across every wall. British walls are wet-plaster skimmed flat.
 
 **Fix:** Regenerate with smooth skimmed plaster walls and no screens on the windows.
 
@@ -163,13 +163,13 @@ Documentary photograph, 35mm, natural light, realistic, not stylised.
 
 <a id="06"></a>
 
-## 06 — Hard fail — kerbside mailbox
+## 06 – Hard fail – kerbside mailbox
 
-![Hard fail — kerbside mailbox](06-fail-mailbox.jpg)
+![Hard fail – kerbside mailbox](06-fail-mailbox.jpg)
 
 **UK 3 · Artefact 9 → 3** · **Reject** · `gpt-image-2`
 
-- `kerbside_mailbox` (critical) — American post-mounted mailbox with the flag raised, standing at the kerb of a house that already has a letterbox in its front door.
+- `kerbside_mailbox` (critical) – American post-mounted mailbox with the flag raised, standing at the kerb of a house that already has a letterbox in its front door.
 
 **Fix:** Remove the kerbside mailbox entirely. Post is delivered through the slot in the door.
 
@@ -189,14 +189,14 @@ flag raised. Documentary photograph, 35mm, natural light, realistic, not stylise
 
 <a id="07"></a>
 
-## 07 — Hard fail — fire hydrant and wire-hung signals
+## 07 – Hard fail – fire hydrant and wire-hung signals
 
-![Hard fail — fire hydrant and wire-hung signals](07-fail-hydrant-lights.jpg)
+![Hard fail – fire hydrant and wire-hung signals](07-fail-hydrant-lights.jpg)
 
 **UK 3 · Artefact 8 → 3** · **Reject** · `nano-banana-2`
 
-- `fire_hydrant` (critical) — Red above-ground American fire hydrant on the pavement in the foreground. UK hydrants are underground behind a small yellow H plate.
-- `traffic_lights_on_wires` (critical) — Signals and signs suspended on catenary wires across the junction. UK signals are post-mounted at the stop line.
+- `fire_hydrant` (critical) – Red above-ground American fire hydrant on the pavement in the foreground. UK hydrants are underground behind a small yellow H plate.
+- `traffic_lights_on_wires` (critical) – Signals and signs suspended on catenary wires across the junction. UK signals are post-mounted at the stop line.
 
 **Fix:** Remove the hydrant. Move the signals onto black posts at the stop line with white backing boards.
 
@@ -219,15 +219,15 @@ light, realistic, not stylised.
 
 <a id="08"></a>
 
-## 08 — Strong tell — American building fabric
+## 08 – Strong tell – American building fabric
 
-![Strong tell — American building fabric](08-tell-clapboard.jpg)
+![Strong tell – American building fabric](08-tell-clapboard.jpg)
 
 **UK 6 · Artefact 9 → 6** · **Weak** · `gpt-image-2`
 
-- `exterior_walls` (minor) — Pale grey vinyl siding on every elevation.
-- `roof` (minor) — Dark asphalt shingle with a dormer, against slate on the neighbours.
-- `front_door` (minor) — Covered porch with steps and railings rather than a door onto the pavement.
+- `exterior_walls` (minor) – Pale grey vinyl siding on every elevation.
+- `roof` (minor) – Dark asphalt shingle with a dormer, against slate on the neighbours.
+- `front_door` (minor) – Covered porch with steps and railings rather than a door onto the pavement.
 
 **Fix:** Regenerate the house in red brick with a slate pitched roof and a front door opening directly onto the forecourt.
 
@@ -251,13 +251,13 @@ along the kerb, red brick terraced houses visible either side. Documentary photo
 
 <a id="09"></a>
 
-## 09 — Soft detractor — cable web over the street
+## 09 – Soft detractor – cable web over the street
 
-![Soft detractor — cable web over the street](09-tell-overhead-cables.jpg)
+![Soft detractor – cable web over the street](09-tell-overhead-cables.jpg)
 
 **UK 8 · Artefact 9 → 8** · **Ships** · `gpt-image-2`
 
-- `dense_cable_web` (minor) — Poles both sides with several spans crossing the carriageway. Denser than typical, but this is genuinely what northern terraced streets look like.
+- `dense_cable_web` (minor) – Poles both sides with several spans crossing the carriageway. Denser than typical, but this is genuinely what northern terraced streets look like.
 
 > This fixture weakened its own check twice. Base 7 for the cable density, lifted back to 8 by seven confirmers. Overhead cables turned out to be poor evidence of Americanness on their own, so the rubric now treats them as a soft detractor that only counts alongside American housing and absent road markings.
 
@@ -278,13 +278,13 @@ light, realistic, not stylised.
 
 <a id="10"></a>
 
-## 10 — Soft detractor — bright summer light
+## 10 – Soft detractor – bright summer light
 
-![Soft detractor — bright summer light](10-tell-harsh-sun.jpg)
+![Soft detractor – bright summer light](10-tell-harsh-sun.jpg)
 
 **UK 8 · Artefact 9 → 8** · **Ships** · `nano-banana-2`
 
-- `light_quality` (minor) — Bright direct sun with hard shadows. Legitimate for a British summer day, so a soft detractor only. The ground is not bleached and the planting is green.
+- `light_quality` (minor) – Bright direct sun with hard shadows. Legitimate for a British summer day, so a soft detractor only. The ground is not bleached and the planting is green.
 
 > This fixture changed the rubric. An earlier version treated any hard blue-sky sun as a strong tell capping uk_score at 6, which would have rejected a real British summer street. The single pole on the right is also correctly ignored now.
 
@@ -305,13 +305,13 @@ realistic, not stylised.
 
 <a id="11"></a>
 
-## 11 — The minimum rule
+## 11 – The minimum rule
 
 ![The minimum rule](11-min-rule-hands.jpg)
 
 **UK 9 · Artefact 4 → 4** · **Reject** · `nano-banana-2`
 
-- `hand_anatomy` (critical) — Six digits on the hand holding the mug, and the two hands merge into one another at the wrist.
+- `hand_anatomy` (critical) – Six digits on the hand holding the mug, and the two hands merge into one another at the wrist.
 
 **Fix:** Regenerate with a single hand on the mug, fingers clearly separated, or crop to the mug and sill only.
 
@@ -335,7 +335,7 @@ stylised.
 
 <a id="12"></a>
 
-## 12 — Confirmers lifting a borderline
+## 12 – Confirmers lifting a borderline
 
 ![Confirmers lifting a borderline](12-confirmers-lift.jpg)
 
@@ -361,9 +361,9 @@ photograph, 35mm, natural light, realistic, not stylised.
 
 <a id="13"></a>
 
-## 13 — Regional edge case — Kent weatherboard
+## 13 – Regional edge case – Kent weatherboard
 
-![Regional edge case — Kent weatherboard](13-regional-weatherboard.jpg)
+![Regional edge case – Kent weatherboard](13-regional-weatherboard.jpg)
 
 **UK 9 · Artefact 9 → 9** · **Ships** · `gpt-image-2`
 
@@ -396,4 +396,4 @@ Building this set corrected the rubric twice, both times because an image was ri
 
 ## Regenerating
 
-Prompts are reproduced above and collected in [`PROMPTS.md`](PROMPTS.md). Where britcheck disagrees with the expectation, check the image before the rubric — usually the prompt did not produce what was asked for. Both corrections above came from doing that and finding the rubric at fault instead, which is the less common outcome and worth pausing on when it happens.
+Prompts are reproduced above and collected in [`PROMPTS.md`](PROMPTS.md). Where britcheck disagrees with the expectation, check the image before the rubric – usually the prompt did not produce what was asked for. Both corrections above came from doing that and finding the rubric at fault instead, which is the less common outcome and worth pausing on when it happens.
