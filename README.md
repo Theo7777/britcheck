@@ -100,29 +100,50 @@ This is a deliberate design decision, not an oversight.
 
 ## Worked examples
 
-`assets/examples/` holds 13 scored images with their verdicts, generated across two
-vendors on purpose — six with OpenAI `gpt-image-1`, seven with Google Nano Banana 2. A
-gate tuned to one generator's quirks is not a gate.
+**[See all 13 scored examples →](assets/examples/)** — every image with the prompt that
+produced it and the verdict it got. Six ship, one weak, six reject.
 
-Three worth looking at:
+Generated across two vendors on purpose: seven with OpenAI `gpt-image-2`, six with
+Google Nano Banana 2. A gate tuned to one generator's quirks is not a gate.
 
-- **`11-min-rule-hands`** is the argument for the minimum. A genuinely British scene —
-  sash window, column radiator, terrace through the glass, mug of tea — scoring 9 on
-  Britishness and 4 on artefacts, because the hand on the mug has six digits. The
-  minimum gives 4 and a regeneration. An average would have shipped it at 6.5.
-- **`12-confirmers-lift`** is the argument for confirmers. Featureless rendered
-  terraces that sit at 7 on detractors alone, carried to 8 by double yellows, a cast
-  iron manhole cover, four coloured bins, and a gully grate.
-- **`13-regional-weatherboard`** is kept as a warning. It was generated as a failure
-  fixture for timber cladding, and came back as genuine Kent weatherboard over a plain
-  tile roof and brick chimney. A rubric that read timber cladding as automatically
-  American would reject a real British house.
+### Why the minimum, and not the average
 
-Building that set corrected the rubric twice, both times because the image was right and
+![The minimum rule](assets/examples/11-min-rule-hands.jpg)
+
+**UK 9 · Artefact 4 → 4. Reject.**
+
+Everything about this is British: the timber sash window with peeling paint, the column
+radiator below the sill, the terrace through the glass, the mug of tea, the damp flat
+light. It scores 9 on Britishness.
+
+It also has six digits on the hand holding the mug, and the two hands merge at the
+wrist. That is 4 on artefacts.
+
+The minimum gives 4 and sends it back. An average would have given 6.5 and shipped it.
+
+### Why confirmers exist
+
+![Confirmers lifting a borderline](assets/examples/12-confirmers-lift.jpg)
+
+**UK 8 · Artefact 9 → 8. Ships.**
+
+Rendered terraces, no distinctive architecture, nothing identifying in the built form.
+On detractors alone it sits at 7 and fails.
+
+Then look at the ground: double yellow lines, a square cast iron manhole cover, three
+wheelie bins in separate colours, and a gully grate at the foot of a black downpipe.
+Eight confirmers carry it over the bar. None of them is the building.
+
+### What the fixtures changed
+
+Building the set corrected the rubric twice, both times because the image was right and
 the rubric was wrong. Blue sky stopped being a strong tell, because Britain has summer.
-A single utility pole stopped being penalised, because poles are normal here — what is
-not normal is a street roofed over by criss-crossing spans. Details in
-[`assets/examples/README.md`](assets/examples/README.md).
+Overhead cables were downgraded twice and now barely count, because northern terraced
+streets genuinely look like that.
+
+The finding underneath is worth more than either check was: **the object checks are
+strong and the ambient checks are weak.** A socket, a hydrant, a mailbox is binary.
+Light and cable density are not.
 
 ## Install
 
